@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light ON OFF</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;background: yellow;
+        }
+        .text-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .main{
+            margin: 100px 0;
+        }
+        .button{
+            margin-top: 100px;
+        }
+
+        .btn1{
+            background: green;
+            padding: 10px 20px;
+        }
+        .btn2{
+            background: red;
+            padding: 10px 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="text-center">
+        <h1 id="headerContent">Light ON OFF</h1>
+    <main class="main">
+        <div class="row">
+            <div class="col-lg-3">
+                <img src="off.png" alt="" class="img-fluid" id="bulb1">
+            </div>
+            <div class="col-lg-3">
+                <img src="off.png" alt="" class="img-fluid" id="bulb2">
+            </div>
+            <div class="col-lg-3">
+                <img src="off.png" alt="" class="img-fluid" id="bulb3">
+            </div>
+            <div class="col-lg-3">
+                <img src="off.png" alt="" class="img-fluid" id="bulb4">
+            </div>
+        </div>
+        <div class="button">
+            <button class="btn1" onclick="lightOFF()">OFF</button>
+            <button class="btn2" onclick="lightON()">ON</button>
+        </div>
+    </main>
+</header>
+    <script src="bootstrap.js"></script>
+
+    <script>
+        const lightOFF=()=>{
+            const headerContent=document.getElementById("headerContent");
+            for(i=1;i<5;i++){
+            let bulb=document.getElementById("bulb".concat(i));
+            if(bulb.src.match('on')){
+                bulb.src="off.png";
+                headerContent.innerHTML="Light OFF";
+                headerContent.style.color="green";
+            }
+        }
+        }
+        const lightON=()=>{
+            const headerContent=document.getElementById("headerContent");
+            for(j=1;j<5;j++){
+            let bulb=document.getElementById("bulb".concat(j));
+            if(bulb.src.match('off')){
+                bulb.src="on.jpg";
+                headerContent.innerHTML="Light ON";
+                headerContent.style.color="red";
+            }
+        }
+        }
+    </script>
+</body>
+</html>
